@@ -1,0 +1,1 @@
+Ext.data.Request=function(a){Ext.apply(this,a)};Ext.data.Request.prototype={action:undefined,rs:undefined,params:undefined,callback:Ext.emptyFn,scope:undefined,reader:undefined};

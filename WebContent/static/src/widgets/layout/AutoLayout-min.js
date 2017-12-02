@@ -1,0 +1,1 @@
+Ext.layout.AutoLayout=Ext.extend(Ext.layout.ContainerLayout,{type:"auto",monitorResize:true,onLayout:function(d,f){Ext.layout.AutoLayout.superclass.onLayout.call(this,d,f);var e=this.getRenderedItems(d),a=e.length,b,g;for(b=0;b<a;b++){g=e[b];if(g.doLayout){g.doLayout(true)}}}});Ext.Container.LAYOUTS.auto=Ext.layout.AutoLayout;

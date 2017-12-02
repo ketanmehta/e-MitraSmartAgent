@@ -1,0 +1,7 @@
+/*!
+ * Extensible 1.0.2
+ * Copyright(c) 2010-2012 Extensible, LLC
+ * licensing@ext.ensible.com
+ * http://ext.ensible.com
+ */
+Ext.ensible.cal.DayHeaderView=Ext.extend(Ext.ensible.cal.MonthView,{weekCount:1,dayCount:1,allDayOnly:true,monitorResize:false,isHeaderView:true,afterRender:function(){if(!this.tpl){this.tpl=new Ext.ensible.cal.DayHeaderTemplate({id:this.id,showTodayText:this.showTodayText,todayText:this.todayText,showTime:this.showTime})}this.tpl.compile();this.addClass("ext-cal-day-header");Ext.ensible.cal.DayHeaderView.superclass.afterRender.call(this)},forceSize:Ext.emptyFn,refresh:function(a){Ext.ensible.log("refresh (DayHeaderView)");Ext.ensible.cal.DayHeaderView.superclass.refresh.call(this,a);this.recalcHeaderBox()},recalcHeaderBox:function(){var b=this.el.child(".ext-cal-evt-tbl"),a=b.getHeight();this.el.setHeight(a+7);this.el.child(".ext-cal-hd-ad-inner").setHeight(a+5);this.el.child(".ext-cal-bg-tbl").setHeight(a+5)},moveNext:function(){return this.moveDays(this.dayCount)},movePrev:function(){return this.moveDays(-this.dayCount)},onClick:function(d,a){if(el=d.getTarget("td",3)){if(el.id&&el.id.indexOf(this.dayElIdDelimiter)>-1){var c=el.id.split(this.dayElIdDelimiter),b=c[c.length-1];this.onDayClick(Date.parseDate(b,"Ymd"),true,Ext.get(this.getDayId(b,true)));return}}Ext.ensible.cal.DayHeaderView.superclass.onClick.apply(this,arguments)}});Ext.reg("extensible.dayheaderview",Ext.ensible.cal.DayHeaderView);

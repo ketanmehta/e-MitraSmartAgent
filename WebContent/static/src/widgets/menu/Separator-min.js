@@ -1,0 +1,1 @@
+Ext.menu.Separator=Ext.extend(Ext.menu.BaseItem,{itemCls:"x-menu-sep",hideOnClick:false,activeClass:"",onRender:function(a){var b=document.createElement("span");b.className=this.itemCls;b.innerHTML="&#160;";this.el=b;a.addClass("x-menu-sep-li");Ext.menu.Separator.superclass.onRender.apply(this,arguments)}});Ext.reg("menuseparator",Ext.menu.Separator);

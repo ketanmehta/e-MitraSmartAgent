@@ -1,0 +1,1 @@
+Ext.Element.addMethods({addKeyListener:function(b,d,c){var a;if(typeof b!="object"||Ext.isArray(b)){a={key:b,fn:d,scope:c}}else{a={key:b.key,shift:b.shift,ctrl:b.ctrl,alt:b.alt,fn:d,scope:c}}return new Ext.KeyMap(this,a)},addKeyMap:function(a){return new Ext.KeyMap(this,a)}});Ext.CompositeElementLite.importElementMethods();

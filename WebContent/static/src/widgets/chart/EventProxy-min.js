@@ -1,0 +1,1 @@
+Ext.FlashEventProxy={onEvent:function(c,b){var a=Ext.getCmp(c);if(a){a.onFlashEvent(b)}else{arguments.callee.defer(10,this,[c,b])}}};

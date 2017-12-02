@@ -1,0 +1,1699 @@
+/*!
+ * Extensible 1.0.2
+ * Copyright(c) 2010-2012 Extensible, LLC
+ * licensing@ext.ensible.com
+ * http://ext.ensible.com
+ */
+
+/*******************************************
+ * 
+ * Ext Calendar styles
+ *
+ ******************************************/
+
+/* -----------------------------------------
+ * Ext overrides 
+ */
+.ext-strict .ext-webkit .x-small-editor .x-form-field-wrap .x-form-trigger {
+    height: 21px;
+}
+
+/* -----------------------------------------
+ * Shared calendar view containers 
+ */
+.x-panel-tbar .ext-cal-toolbar {
+    padding: 3px;
+    border-bottom-width: 0 !important;
+}
+.x-panel-tbar .ext-cal-toolbar .x-btn button {
+    /*font-weight: bold;*/
+    color: #555;
+}
+.x-panel-tbar .ext-cal-toolbar .x-toolbar-cell {
+    padding: 0 3px;
+}
+
+.ext-cal-ct {
+    position: relative;
+    font-family: helvetica, arial, sans-serif;
+}
+.x-cal-panel .x-panel-body {
+    background: white !important;
+}
+.x-panel-mc .x-panel-body .ext-cal-ct,
+.x-panel-mc .x-panel-body .ext-evt-edit-form {
+    border-left:1px solid #99BBE8;
+    border-right:1px solid #99BBE8;
+}
+.x-panel-mc .x-panel-body .ext-cal-day-header {
+    border: 0;
+}
+.ext-cal-ct img {
+    border:0 none;
+}
+.ext-cal-inner-ct {
+    height: 100%;
+    line-height: 14px;
+    position: relative;
+    background: #eee;
+    white-space: nowrap;
+}
+.ext-cal-ct td,
+.ext-cal-mdv td {
+    font-size: 11px;
+}
+.x-cal-body {
+    /* override the default -noheader style ext uses when there is no panel header */
+    border-top: 0 !important;
+}
+
+/* Window specific rules */
+.x-window .x-window-mc .x-cal-body {
+    border: 0 !important;
+}
+.x-window .ext-cal-toolbar {
+    border: 0 !important;
+}
+
+/* Background layout table for week rows */
+.ext-cal-bg-tbl {
+    height:100%;
+    left:0;
+    position:absolute;
+    table-layout:fixed;
+    top:0;
+    width:100%;
+}
+
+/* Shared subheader */
+.ext-cal-hd-days-tbl {
+    background: #EFEFEF;
+    color: #555;
+    table-layout: fixed;
+    top: 18px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 12px;
+}
+.ext-cal-month-hd .ext-cal-hd-days-tbl {
+    border-top: 1px solid #99BBE8;
+}
+.x-calendar-nonav .ext-cal-month-hd .ext-cal-hd-days-tbl {
+    border-top: 0;
+}
+.ext-cal-month-hd .ext-cal-hd-day {
+    border-left: 1px solid #C3D9FF;
+}
+.ext-cal-hd-ct {
+    border-bottom: 1px solid #bcf;
+}
+.ext-cal-hd-day {
+    text-align: center;
+    padding: 4px 0;
+    white-space: nowrap;
+}
+
+/* -----------------------------------------
+ * Day/week-specific styles
+ */
+.ext-cal-dayview .ext-cal-hd-days-tbl {
+    table-layout: fixed;
+    width: 100%;
+    background-color: #CDDCEF;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 14px;
+    height: 100%;
+}
+.ext-cal-hd-days-td {
+    padding-bottom: 2px;
+}
+.ext-cal-dayview .ext-cal-hd-ct {
+    height: 100%;
+}
+.ext-cal-dayview .ext-cal-gutter {
+    width: 50px;
+}
+.ext-cal-dayview .ext-cal-gutter-rt {
+    width: 15px;
+}
+.x-win .ext-cal-dayview .ext-cal-gutter-rt {
+    width: 16px;
+}
+/* OSX Lion scrollbars do not take up space in the body so they need special rules */
+.x-no-scrollbar .ext-cal-hd-days-td {
+    width: 100%;
+}
+.x-no-scrollbar .ext-cal-dayview .ext-cal-gutter-rt,
+.x-no-scrollbar .x-win .ext-cal-dayview .ext-cal-gutter-rt {
+    width: 0;
+}
+.ext-cal-hd-ad {
+    background-color: #fff;
+    font-size: 11px;
+    line-height: 14px;
+    border-color: #e3e9ff #e3e9ff #e3e9ff #e3e9ff;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+}
+.ext-cal-hd-ad-inner {
+    position: relative;
+    height: 100%;
+}
+.x-calendar-nonav .ext-cal-hd-ad-inner {
+    margin-top: 3px;
+}
+.ext-cal-dayview .ext-cal-dtitle {
+    padding: 8px 1px 2px;
+} 
+.ext-cal-hd-ad-bg-tbl {
+    position: absolute;
+    left: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+.ext-cal-hd-ad .st-c {
+    padding: 1px 1px 0 1px
+}
+.ext-cal-dayview .ext-cal-body-ct {
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    line-height: normal;
+    background: #eee;
+    margin-top: 1px;
+}
+.ext-cal-dayview .ext-cal-body-ct .ext-cal-bg-tbl {
+    height: 1008px;
+}
+.ext-cal-dayview .ext-cal-bg-tbl {
+    background-color: #fff;
+    margin-top: -1px;
+    border-bottom: 1px solid #bcf;
+    border-right: 1px solid #bcf;
+}
+.ext-cal-dayview .ext-cal-bg-rows {
+    position: relative;
+    margin-left: 1px;
+    top: 1px;
+}
+.ext-cal-dayview .ext-cal-bg-rows-inner {
+    position: absolute;
+    width: 100%;
+}
+.ext-ie .ext-cal-dayview .ext-cal-bg-rows-inner,
+.ext-gecko .ext-cal-dayview .ext-cal-bg-rows-inner {
+    top: -1; /* row line alignment fix */
+}
+.ext-cal-dayview .ext-cal-bg-row {
+    height: 42px;
+}
+.ext-cal-dayview .ext-cal-bg-row-div {
+    border-bottom: 1px dotted #ddd;
+    border-top: 1px solid #ddd;
+    font-size: 1px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+.ext-cal-dayview .ext-cal-bg-row .no-sep {
+    border-bottom: 0;
+}
+.ext-cal-dayview .ext-row-1 {
+    border-top: 0;
+}
+.ext-cal-day-times {
+    background-color: #f6f9fc;
+    color: #666;
+    padding: 1px 0 0 0;
+    text-align: right;
+    vertical-align: top;
+}
+.ext-cal-day-time-inner {
+    height: 41px;
+    border-bottom: 1px solid #ddd;
+    padding-right: 2px
+}
+.ext-cal-day-col {
+    border-left: 1px solid #ddd;
+    vertical-align: top
+}
+.ext-cal-day-col-inner {
+    position: relative;
+    cursor: default;
+}
+.ext-cal-day-col-gutter {
+    position: relative;
+    margin-right: 15px;
+    height: 1008px;
+}
+.ext-ie .ext-cal-day-col-gutter,
+.ext-opera .ext-cal-day-col-gutter {
+    margin-right: 10px;
+}
+.ext-ie6 .ext-cal-day-col-gutter {
+    zoom: 1
+}
+
+/* -----------------------------------------
+ * Month-specific styles
+ */
+.ext-cal-monthview .ext-cal-hd-ct {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    /*background: #95B8EF;*/
+}
+.ext-cal-monthview .ext-cal-body-ct {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    border:0;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+.ext-cal-monthview .ext-cal-noheader .ext-cal-hd-ct {
+    display: none;
+}
+.ext-cal-monthview .ext-cal-noheader .ext-cal-body-ct {
+    top: 0;
+}
+
+/* Month view week link boxes */
+.ext-cal-monthview .ext-cal-week-link,
+.ext-cal-monthview .ext-cal-week-link-hd {
+    width: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #EFEFEF;
+    border-top: 1px solid #C3D9FF;
+    border-right: 1px solid #C3D9FF;
+    font-size: 10px;
+    color: #999;
+    padding: 3px 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+.ext-cal-monthview .ext-cal-week-link-hd {
+    border-top: 1px solid #99BBE8;
+}
+.x-calendar-nonav .ext-cal-monthview .ext-cal-week-link-hd {
+    border-top: 0;
+}
+.ext-cal-week-links .ext-cal-bg-tbl {
+    left: 20px;
+}
+.ext-cal-week-links .ext-cal-evt-tbl,
+.ext-cal-week-links .ext-cal-hd-days-tbl {
+    margin-left: 20px;
+}
+.ext-cal-monthview .ext-week-link-over {
+    background: #E0E7EF;
+}
+.ext-cal-week-links .ext-cal-day-first {
+    border-left: 1px solid #C3D9FF;
+}
+
+/* Hide the nav bar if specified */
+.ext-cal-hide-navbar .ext-cal-hd-ct {
+    height: 25px;
+}
+.ext-cal-hide-navbar .ext-cal-body-ct {
+    top: 24px;
+}
+
+/* Outer wrapping div for week rows */
+.ext-cal-wk-ct {
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+}
+.ext-cal-monthview .ext-cal-wk-ct {
+    height: 100%;
+}
+/* Background table cell */
+.ext-cal-day {
+    border-left: 1px solid #C3D9FF;
+    cursor: pointer;
+}
+.ext-cal-day-first {
+   border-left: 0;
+}
+
+.ext-cal-ev,
+.ext-cal-dtitle {
+    cursor: pointer;
+}
+.ext-cal-readonly .ext-cal-day,
+.ext-cal-readonly .ext-cal-dtitle {
+    cursor: default;
+} 
+.ext-day-over {
+    background: #D1EAEF !important;
+}
+/* Event container table */
+.ext-cal-evt-tbl {
+    position:relative;
+    table-layout:fixed;
+    width:100%;
+}
+
+/* Event title cell (includes today, prev & next month) */
+td.ext-cal-dtitle {
+    font-family: helvetica, arial, sans-serif;
+    border-top:1px solid #C3D9FF;
+    color: #A7C6DF;
+    line-height:14px;
+    overflow:hidden;
+    text-align:right;
+    font-size: 16px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+}
+td.ext-cal-dtitle-first {
+    border-top: 1px solid #BBCCFF;
+}
+td.ext-cal-dtitle div {
+    padding: 2px 4px 1px;
+}
+/* Today's title cell */
+td.ext-cal-dtitle-today div {
+    color: #BFA52F;
+    white-space: nowrap;
+}
+/* Today time span */
+.ext-cal-dtitle-time {
+    font-size: 11px;
+}
+/* Weekend background cell */
+.ext-cal-day-we {
+    background: #EFF9FC;
+}
+/* Today's background cell */
+.ext-cal-day-today {
+    background: #FFF4BF;
+}
+/* Prev/next month title cells */
+.ext-cal-dtitle-prev div,
+.ext-cal-dtitle-next div {
+    color: #bbb;
+}
+/* Prev/next month background cells */
+.ext-cal-day-prev,
+.ext-cal-day-next {
+    background: #EFEFEF;
+}
+/* Event cells */
+.ext-cal-ev {
+    font-family:Verdana,sans-serif;
+    padding:1px 1px 0 2px;
+    vertical-align:top;
+}
+/* Event overflow more link */
+.ext-cal-ev-more {
+	text-align: center;
+}
+.ext-cal-ev-more a,
+.ext-cal-ev-more a:visited {
+	color: #369;
+	cursor: pointer;
+}
+/* More view */
+.ext-cal-mvd-tbl {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.ext-cal-evt {
+    cursor:pointer;
+}
+
+/* Default rounded event div (Gecko/Webkit/W3C) */
+.ext-cal-evr { /* rounded */
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    overflow:hidden;
+    padding:1px 1px 1px 5px;
+    white-space:nowrap;
+	text-overflow: ellipsis;
+    border: 0;
+}
+/* Nested event divs (IE/Opera) */
+.ext-cal-evo { /* outer */
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 0;
+    border-left: 0;
+    margin: 0 1px;
+    cursor: pointer;
+    position: relative;
+}
+.ext-cal-day-col .ext-cal-evo  {
+    height: 100%;
+}
+.ext-cal-evm { /* middle */
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 0;
+    border-bottom: 0;
+    margin: 0 -1px;
+    zoom: 1;
+    padding-left: 3px;
+}
+.ext-cal-evi { /* inner */
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Day view event styles */
+.ext-cal-day-col .ext-cal-evt {
+    position: absolute;
+    overflow: hidden;
+    cursor: default;
+    color: #fff;
+    -moz-user-select: none;
+}
+.ext-cal-evt dl {
+    margin: 0;
+    border: 0 1px;
+    overflow: hidden;
+    border-width: 0 1px;
+    border-style: solid;
+}
+.ext-ie6 .ext-cal-evt dl {
+    zoom: 1
+}
+.ext-cal-evt dd {
+    margin: 0;
+    overflow: hidden;
+    font-size: 11px;
+    text-align: left;
+    word-wrap: break-word;
+}
+.ext-cal-evdm {
+    border: 1px solid;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.ext-cal-evdm dt {
+    margin-top: 0
+}
+.ext-cal-day-col .ext-cal-evt a:link,
+.ext-cal-day-col .ext-cal-evt a:visited,
+.ext-cal-day-col .ext-cal-evt a:active {
+    text-decoration: none;
+    color: #fff
+}
+
+.ext-cal-evb {
+    height: 1px;
+    overflow: hidden;
+    margin: 0 2px;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+.ext-opera .ext-cal-evb,
+.ext-strict .ext-ie .ext-cal-evb {
+    height: 0;
+}
+
+/* Event spanning -- overrides rounded corners */
+.ext-cal-ev-spanboth,
+.ext-cal-ev-spanleft,
+.ext-cal-ev-spanright {
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border-radius:0;
+	position: relative;
+}
+.ext-cal-ev-spanleft {
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    xpadding-left:5px;
+}
+.ext-cal-ev-spanright {
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    xpadding-right:5px;
+}
+/* IE/ Opera: */
+.ext-cal-ev-spanboth .ext-cal-evm {
+	margin: 0;
+}
+.ext-cal-ev-spanright .ext-cal-evm {
+	margin: 0 0 0 -1px;
+}
+.ext-cal-ev-spanleft .ext-cal-evm {
+	margin: 0 -1px 0 0;
+}
+
+.ext-cal-spl,
+.ext-cal-spr {
+/*    background-image:url(../images/default/calendar-sprites.gif);
+    background-repeat:no-repeat;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    width: 2px;
+	position: absolute;
+	top: 0;*/
+}
+.ext-cal-spl {
+    background-position:-1px -11px;
+    left: 0;
+}
+.ext-cal-spr {
+    background-position:0 -11px;
+    right: -2px;
+}
+.ext-ie .ext-cal-spr {
+    right: -5px;
+}
+
+/* Generic calendar icons */
+.ext-cal-ic {
+    background-image:url(../images/default/calendar-sprites.gif);
+    background-repeat:no-repeat;
+    display:inline-block;
+    height:11px;
+    line-height:11px;
+    margin-left:4px;
+    width:14px;
+}
+.ext-cal-ic-rcr {
+    background-position:0 0;
+}
+.ext-cal-ic-rem {
+    background-position:-14px 0;
+}
+
+/* Calendar DD styles */
+.ext-cal-dd-sel-ct {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 0;
+}
+.ext-cal-dd-sel {
+    background-color: #C3D9FF;
+    font-size: 0;
+    line-height: 0;
+    opacity: 0.5;
+    position: absolute;
+}
+.ext-evt-over {
+    opacity: .8;
+}
+
+/* Calendar Picker */
+.ext-calendar-picker .x-form-text {
+    padding-left: 27px;
+}
+.ext-calendar-picker .x-combo-list-item {
+    padding-left: 24px;
+}
+.ext-cal-picker-icon {
+    width: 20px;
+    height: 16px;
+    margin-right: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    float: left;
+}
+/* This is the selected icon that always shows: */
+.ext-cal-picker-mainicon {
+    float: none;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+}
+
+/*
+ * Event resize handle
+ */
+.ext-evt-rsz {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    line-height: 5px;
+    width: 100%;
+    text-align: center; /* needed for IE quirks mode */
+    cursor: s-resize;
+}
+.ext-gecko .ext-evt-rsz,
+.ext-webkit .ext-evt-rsz {
+    cursor: ns-resize;
+}
+.ext-evt-rsz-h {
+    display: none;
+    border-top:3px double;
+    border-color: white;
+    font-size:0;
+    height:0;
+    line-height:0;
+    margin-left:auto;
+    margin-right:auto;
+    width:20px;
+    opacity:.5;
+    -moz-opacity:.5;
+    -khtml-opacity:.5;
+    /* no opacity for ie by default */
+}
+.ext-evt-over .ext-evt-rsz-h {
+    display: block;
+}
+.ext-ie .ext-evt-rsz-h {
+    border-color: #ccc;
+}
+.ext-strict .ext-ie8 .ext-evt-rsz-h {
+    border-color: #fff;
+    filter:alpha(opacity=50);
+}
+
+.ext-cal-day-col .ext-cal-evt {
+    position: absolute;
+}
+.ext-cal-day-col .ext-cal-evr,
+.ext-cal-day-col .ext-cal-evi {
+    white-space: normal;
+}
+
+/* Shim for drag/drop operations on calendar views */
+.ext-dd-shim {
+    z-index:1000;
+    overflow:hidden;
+    position:absolute;
+    left:0;top:0;
+    opacity:.40;
+    -moz-opacity:.40;
+	-khtml-opacity:.40;
+    filter:alpha(opacity=40);
+	background: #C3D9FF;
+}
+
+/* StatusProxy override styles */
+.ext-dd-ghost-ct {
+	color:#000;
+	font: normal 11px arial, helvetica, sans-serif;
+	border: 1px solid;
+    border-color: #ddd #bbb #bbb #ddd;
+	background-color:#fff;
+	padding:3px;
+	padding-left:20px;
+	white-space: nowrap;
+}
+.ext-dd-ghost-ct .x-dd-drag-ghost{
+	border: 0;
+	background: none;
+	padding: 0;
+	width: 150px;
+}
+.ext-dd-ghost-ct .ext-evt-rsz {
+    display: none;
+}
+
+/*******************************************
+ * 
+ * Calendar navigation picker styles
+ * TODO: make image urls relative
+ * 
+ ******************************************/
+.ext-cal-nav-picker {
+    border-style: none none solid;
+    border-color: #99BBE8;
+}
+.ext-cal-nav-picker .x-date-left,
+.ext-cal-nav-picker .x-date-middle,
+.ext-cal-nav-picker .x-date-right {
+    background: url(http://extjs.cachefly.net/ext-3.2.0/resources/images/default/toolbar/bg.gif) repeat-x;
+}
+.ext-cal-nav-picker .x-date-left a {
+    background-image: url(http://extjs.cachefly.net/ext-3.2.0/resources/images/default/grid/page-prev.gif);
+}
+.ext-cal-nav-picker .x-date-right a {
+    background-image: url(http://extjs.cachefly.net/ext-3.2.0/resources/images/default/grid/page-next.gif);
+}
+.ext-cal-nav-picker .x-date-middle {
+    padding: 3px 0;
+}
+.ext-cal-nav-picker .x-date-middle .x-btn-text {
+    color: #555;
+    font-weight: bold;
+}
+.ext-cal-nav-picker .x-date-middle .x-btn-mc em.x-btn-arrow {
+    background-image: url(http://extjs.cachefly.net/ext-3.2.0/resources/images/default/button/arrow.gif);
+    background-position: right 4px;
+}
+.ext-cal-nav-picker .x-date-inner {
+    border-top: 1px solid #BBCCFF;
+}
+.ext-cal-nav-picker .x-date-inner th {
+    background: none;
+    border-bottom: 1px solid #BBCCFF;
+}
+.ext-cal-nav-picker .x-date-inner .x-date-today a {
+    border-color: #BFA52F;
+    background: #FFF4BF;
+}
+
+/*******************************************
+ * 
+ * Calendar editor window styles
+ *
+ ******************************************/
+.ext-cal-evt-win {
+    z-index: 12100;
+}
+.ext-gecko .ext-cal-event-win .x-window-body .x-form-item {
+    overflow: hidden;
+}
+.ext-cal-event-win .x-window-body .x-form {
+    background: transparent;
+}
+.ext-cal-event-win a:link,
+.ext-cal-event-win a:visited {
+    color: #15428B;
+}
+
+/*******************************************
+ * 
+ * Calendar form styles
+ *
+ ******************************************/
+.ext-evt-edit-form {
+    height: 100%;
+}
+.ext-evt-edit-form .x-form-item {
+    margin-bottom: 8px;
+}
+.ext-evt-edit-form .x-panel-bbar .x-toolbar {
+    border-bottom: 1px solid #99BBE8;
+}
+.ext-evt-edit-form .x-panel-header {
+    background: transparent url(../images/default/ext-cal-edit-hd.png) repeat-x;
+    padding: 9px 0 4px 5px !important;
+    font-size: 13px !important;
+    font-family: helvetica, arial, sans-serif;
+    border-top: 0;
+    border-bottom: 1px solid #BBCCFF;
+}
+.x-panel-mc .ext-evt-edit-form .x-panel-header {
+   border-top: 1px solid #99BBE8;
+}
+.ext-evt-edit-form .x-panel-fbar {
+    padding: 5px 10px;
+    background: #DFE8F6;
+    border: 1px solid #BBCCFF;
+}
+
+/*******************************************
+ * 
+ * DateRangeField styles
+ *
+ ******************************************/
+.ext-dt-range label {
+    font-size: 12px;
+}
+.ext-dt-range .x-form-check-wrap {
+    white-space: nowrap;
+    line-height: 15px;
+}
+.ext-dt-range .x-table-layout-cell {
+    padding-right: 5px;
+}
+.ext-dt-range-row1 .x-table-layout-cell {
+    padding-bottom: 4px;
+}
+
+/*******************************************
+ * 
+ * ContextMenu styles
+ *
+ ******************************************/
+.extensible-cal-icon-evt-edit {
+    background-image:url(../images/default/silk/calendar_edit.png) !important;
+}
+.extensible-cal-icon-evt-del {
+    background-image:url(../images/default/silk/cross.png) !important;
+}
+.extensible-cal-icon-evt-move {
+    background-image:url(../images/default/silk/date_go.png) !important;
+}
+
+/*******************************************
+ * 
+ * CalendarList styles
+ *
+ ******************************************/
+.x-calendar-list .x-panel-body {
+    padding: 4px 2px 2px;
+    background: #fff !important;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12px;
+    border-bottom: 1px solid #99BBE8;
+}
+.x-calendar-list .x-panel-header-text {
+    color: #555;
+}
+.x-calendar-list li {
+    position: relative;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.x-calendar-list li em {
+    background-image: url(../images/default/calendar-sprites.gif);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    height: 11px;
+    line-height: 11px;
+    width: 12px;
+    top: 2px;
+    background-position: -40px 0;
+    right: 0;
+}
+.x-calendar-list .hover em {
+    background-position: -28px 0;
+    right: 2px;
+    opacity:.7;
+    -moz-opacity:.7;
+}
+.x-calendar-list .ext-cal-evr {
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+.x-calendar-list .ext-cal-hidden,
+/* IE/Opera: */
+.x-calendar-list .ext-cal-hidden .ext-cal-evi {
+    background-image: url(../images/default/ext-cal-list-hidden.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    opacity:.5;
+    -moz-opacity:.5;
+}
+.ext-ie .x-calendar-list .ext-cal-hidden {
+    filter: alpha(opacity=50);
+    zoom: 1;
+}
+.ext-ie .x-calendar-list .ext-cal-hidden .ext-cal-evi  {
+    /* the following works around an IE bug that won't apply the opacity filter correctly without dimensions */
+    width: 100%;
+    height: 100%;
+}
+.ext-ie6 .x-calendar-list .ext-cal-hidden .ext-cal-evi {
+    background-image: url(../images/default/ext-cal-list-hidden-ie6.png);
+}
+.extensible-cal-icon-cal-show {
+    background-image:url(../images/default/silk/calendar_view_month.png) !important;
+}
+.extensible-cal-icon-cal-colors {
+    background-image:url(../images/default/silk/color_wheel.png) !important;
+}
+/*******************************************
+ * 
+ * Calendar event colors
+ * 
+ ******************************************/
+/*
+ * This is the text color for all-day and span events.
+ * Changing this will affect all events across all calendars.
+ */
+.ext-cal-evr,
+.ext-cal-evi,
+.ext-cal-evt dl {
+    color: #fff;
+}
+
+/*========================================================
+ * The following block defines the default event styles 
+ * used when no calendar info is available. It includes all
+ * of the rules necessary to style a specific calendar.
+ */
+/* The text color for non-all-day events that have no background color */
+.x-cal-default,
+.x-cal-default-x .ext-cal-evb,
+.ext-ie .x-cal-default-ad,
+.ext-opera .x-cal-default-ad {
+    color: #668CB3;
+}
+/* 
+ * The background color for all-day and span events.  Sorry for all the rules,
+ * they are mostly to accommodate browsers that do not handle border-radius.
+ */
+.ext-cal-day-col .x-cal-default,
+.ext-dd-drag-proxy .x-cal-default,
+.x-cal-default-ad,
+.x-cal-default-ad .ext-cal-evm,
+.x-cal-default .ext-cal-picker-icon,
+.x-cal-default-x dl,
+.x-calendar-palette em .x-cal-default {
+    background: #668CB3;
+}
+/*  END of default event styles
+ * ========================================================
+ */
+
+/*
+ * The block above defines the 3 rules required to style one calendar.
+ * The following blocks are the exact same rules, but with different 
+ * color definitions for each unique calendar.  Each specific calendar
+ * has the default class name prefix "x-cal-" plus the calendar's unique class
+ * id. To customize these colors you can simply alter the colors of existing
+ * calendars, or you can create new style definitions as below, just making
+ * sure that the class name you choose matches the StyleClass defined in your 
+ * calendar store.
+ */
+/* ===== x-cal-000000 ===== */
+.x-cal-000000,
+.x-cal-000000-x .ext-cal-evb,
+.ext-ie .x-cal-000000-ad,
+.ext-opera .x-cal-000000-ad {
+    color: #000000;
+}
+.ext-cal-day-col .x-cal-000000,
+.ext-dd-drag-proxy .x-cal-000000,
+.x-cal-000000-ad,
+.x-cal-000000-ad .ext-cal-evm,
+.x-cal-000000 .ext-cal-picker-icon,
+.x-cal-000000-x dl,
+.x-calendar-palette em .x-cal-000000 {
+    background: #000000;
+}
+
+/* ===== x-cal-993300 ===== */
+.x-cal-993300,
+.x-cal-993300-x .ext-cal-evb,
+.ext-ie .x-cal-993300-ad,
+.ext-opera .x-cal-993300-ad {
+    color: #993300;
+}
+.ext-cal-day-col .x-cal-993300,
+.ext-dd-drag-proxy .x-cal-993300,
+.x-cal-993300-ad,
+.x-cal-993300-ad .ext-cal-evm,
+.x-cal-993300 .ext-cal-picker-icon,
+.x-cal-993300-x dl,
+.x-calendar-palette em .x-cal-993300 {
+    background: #993300;
+}
+.x-cal-993300.ext-cal-evr,
+.x-cal-993300-x .ext-cal-evb,
+.x-cal-993300-x dl {
+    xborder-color: #993300;
+}
+
+/* ===== x-cal-333300 ===== */
+.x-cal-333300,
+.x-cal-333300-x .ext-cal-evb,
+.ext-ie .x-cal-333300-ad,
+.ext-opera .x-cal-333300-ad {
+    color: #333300;
+}
+.ext-cal-day-col .x-cal-333300,
+.ext-dd-drag-proxy .x-cal-333300,
+.x-cal-333300-ad,
+.x-cal-333300-ad .ext-cal-evm,
+.x-cal-333300 .ext-cal-picker-icon,
+.x-cal-333300-x dl,
+.x-calendar-palette em .x-cal-333300 {
+    background: #333300;
+}
+
+/* ===== x-cal-003300 ===== */
+.x-cal-003300,
+.x-cal-003300-x .ext-cal-evb,
+.ext-ie .x-cal-003300-ad,
+.ext-opera .x-cal-003300-ad {
+    color: #003300;
+}
+.ext-cal-day-col .x-cal-003300,
+.ext-dd-drag-proxy .x-cal-003300,
+.x-cal-003300-ad,
+.x-cal-003300-ad .ext-cal-evm,
+.x-cal-003300 .ext-cal-picker-icon,
+.x-cal-003300-x dl,
+.x-calendar-palette em .x-cal-003300 {
+    background: #003300;
+}
+
+/* ===== x-cal-003366 ===== */
+.x-cal-003366,
+.x-cal-003366-x .ext-cal-evb,
+.ext-ie .x-cal-003366-ad,
+.ext-opera .x-cal-003366-ad {
+    color: #003366;
+}
+.ext-cal-day-col .x-cal-003366,
+.ext-dd-drag-proxy .x-cal-003366,
+.x-cal-003366-ad,
+.x-cal-003366-ad .ext-cal-evm,
+.x-cal-003366 .ext-cal-picker-icon,
+.x-cal-003366-x dl,
+.x-calendar-palette em .x-cal-003366 {
+    background: #003366;
+}
+
+/* ===== x-cal-000080 ===== */
+.x-cal-000080,
+.x-cal-000080-x .ext-cal-evb,
+.ext-ie .x-cal-000080-ad,
+.ext-opera .x-cal-000080-ad {
+    color: #000080;
+}
+.ext-cal-day-col .x-cal-000080,
+.ext-dd-drag-proxy .x-cal-000080,
+.x-cal-000080-ad,
+.x-cal-000080-ad .ext-cal-evm,
+.x-cal-000080 .ext-cal-picker-icon,
+.x-cal-000080-x dl,
+.x-calendar-palette em .x-cal-000080 {
+    background: #000080;
+}
+
+/* ===== x-cal-333399 ===== */
+.x-cal-333399,
+.x-cal-333399-x .ext-cal-evb,
+.ext-ie .x-cal-333399-ad,
+.ext-opera .x-cal-333399-ad {
+    color: #333399;
+}
+.ext-cal-day-col .x-cal-333399,
+.ext-dd-drag-proxy .x-cal-333399,
+.x-cal-333399-ad,
+.x-cal-333399-ad .ext-cal-evm,
+.x-cal-333399 .ext-cal-picker-icon,
+.x-cal-333399-x dl,
+.x-calendar-palette em .x-cal-333399 {
+    background: #333399;
+}
+
+/* ===== x-cal-333333 ===== */
+.x-cal-333333,
+.x-cal-333333-x .ext-cal-evb,
+.ext-ie .x-cal-333333-ad,
+.ext-opera .x-cal-333333-ad {
+    color: #333333;
+}
+.ext-cal-day-col .x-cal-333333,
+.ext-dd-drag-proxy .x-cal-333333,
+.x-cal-333333-ad,
+.x-cal-333333-ad .ext-cal-evm,
+.x-cal-333333 .ext-cal-picker-icon,
+.x-cal-333333-x dl,
+.x-calendar-palette em .x-cal-333333 {
+    background: #333333;
+}
+
+/* ===== x-cal-800000 ===== */
+.x-cal-800000,
+.x-cal-800000-x .ext-cal-evb,
+.ext-ie .x-cal-800000-ad,
+.ext-opera .x-cal-800000-ad {
+    color: #800000;
+}
+.ext-cal-day-col .x-cal-800000,
+.ext-dd-drag-proxy .x-cal-800000,
+.x-cal-800000-ad,
+.x-cal-800000-ad .ext-cal-evm,
+.x-cal-800000 .ext-cal-picker-icon,
+.x-cal-800000-x dl,
+.x-calendar-palette em .x-cal-800000 {
+    background: #800000;
+}
+
+/* ===== x-cal-FF6600 ===== */
+.x-cal-FF6600,
+.x-cal-FF6600-x .ext-cal-evb,
+.ext-ie .x-cal-FF6600-ad,
+.ext-opera .x-cal-FF6600-ad {
+    color: #FF6600;
+}
+.ext-cal-day-col .x-cal-FF6600,
+.ext-dd-drag-proxy .x-cal-FF6600,
+.x-cal-FF6600-ad,
+.x-cal-FF6600-ad .ext-cal-evm,
+.x-cal-FF6600 .ext-cal-picker-icon,
+.x-cal-FF6600-x dl,
+.x-calendar-palette em .x-cal-FF6600 {
+    background: #FF6600;
+}
+
+/* ===== x-cal-808000 ===== */
+.x-cal-808000,
+.x-cal-808000-x .ext-cal-evb,
+.ext-ie .x-cal-808000-ad,
+.ext-opera .x-cal-808000-ad {
+    color: #808000;
+}
+.ext-cal-day-col .x-cal-808000,
+.ext-dd-drag-proxy .x-cal-808000,
+.x-cal-808000-ad,
+.x-cal-808000-ad .ext-cal-evm,
+.x-cal-808000 .ext-cal-picker-icon,
+.x-cal-808000-x dl,
+.x-calendar-palette em .x-cal-808000 {
+    background: #808000;
+}
+
+/* ===== x-cal-008000 ===== */
+.x-cal-008000,
+.x-cal-008000-x .ext-cal-evb,
+.ext-ie .x-cal-008000-ad,
+.ext-opera .x-cal-008000-ad {
+    color: #008000;
+}
+.ext-cal-day-col .x-cal-008000,
+.ext-dd-drag-proxy .x-cal-008000,
+.x-cal-008000-ad,
+.x-cal-008000-ad .ext-cal-evm,
+.x-cal-008000 .ext-cal-picker-icon,
+.x-cal-008000-x dl,
+.x-calendar-palette em .x-cal-008000 {
+    background: #008000;
+}
+
+/* ===== x-cal-008080 ===== */
+.x-cal-008080,
+.x-cal-008080-x .ext-cal-evb,
+.ext-ie .x-cal-008080-ad,
+.ext-opera .x-cal-008080-ad {
+    color: #008080;
+}
+.ext-cal-day-col .x-cal-008080,
+.ext-dd-drag-proxy .x-cal-008080,
+.x-cal-008080-ad,
+.x-cal-008080-ad .ext-cal-evm,
+.x-cal-008080 .ext-cal-picker-icon,
+.x-cal-008080-x dl,
+.x-calendar-palette em .x-cal-008080 {
+    background: #008080;
+}
+
+/* ===== x-cal-0000FF ===== */
+.x-cal-0000FF,
+.x-cal-0000FF-x .ext-cal-evb,
+.ext-ie .x-cal-0000FF-ad,
+.ext-opera .x-cal-0000FF-ad {
+    color: #0000FF;
+}
+.ext-cal-day-col .x-cal-0000FF,
+.ext-dd-drag-proxy .x-cal-0000FF,
+.x-cal-0000FF-ad,
+.x-cal-0000FF-ad .ext-cal-evm,
+.x-cal-0000FF .ext-cal-picker-icon,
+.x-cal-0000FF-x dl,
+.x-calendar-palette em .x-cal-0000FF {
+    background: #0000FF;
+}
+
+/* ===== x-cal-666699 ===== */
+.x-cal-666699,
+.x-cal-666699-x .ext-cal-evb,
+.ext-ie .x-cal-666699-ad,
+.ext-opera .x-cal-666699-ad {
+    color: #666699;
+}
+.ext-cal-day-col .x-cal-666699,
+.ext-dd-drag-proxy .x-cal-666699,
+.x-cal-666699-ad,
+.x-cal-666699-ad .ext-cal-evm,
+.x-cal-666699 .ext-cal-picker-icon,
+.x-cal-666699-x dl,
+.x-calendar-palette em .x-cal-666699 {
+    background: #666699;
+}
+
+/* ===== x-cal-808080 ===== */
+.x-cal-808080,
+.x-cal-808080-x .ext-cal-evb,
+.ext-ie .x-cal-808080-ad,
+.ext-opera .x-cal-808080-ad {
+    color: #808080;
+}
+.ext-cal-day-col .x-cal-808080,
+.ext-dd-drag-proxy .x-cal-808080,
+.x-cal-808080-ad,
+.x-cal-808080-ad .ext-cal-evm,
+.x-cal-808080 .ext-cal-picker-icon,
+.x-cal-808080-x dl,
+.x-calendar-palette em .x-cal-808080 {
+    background: #808080;
+}
+
+/* ===== x-cal-FF0000 ===== */
+.x-cal-FF0000,
+.x-cal-FF0000-x .ext-cal-evb,
+.ext-ie .x-cal-FF0000-ad,
+.ext-opera .x-cal-FF0000-ad {
+    color: #FF0000;
+}
+.ext-cal-day-col .x-cal-FF0000,
+.ext-dd-drag-proxy .x-cal-FF0000,
+.x-cal-FF0000-ad,
+.x-cal-FF0000-ad .ext-cal-evm,
+.x-cal-FF0000 .ext-cal-picker-icon,
+.x-cal-FF0000-x dl,
+.x-calendar-palette em .x-cal-FF0000 {
+    background: #FF0000;
+}
+
+/* ===== x-cal-FF9900 ===== */
+.x-cal-FF9900,
+.x-cal-FF9900-x .ext-cal-evb,
+.ext-ie .x-cal-FF9900-ad,
+.ext-opera .x-cal-FF9900-ad {
+    color: #FF9900;
+}
+.ext-cal-day-col .x-cal-FF9900,
+.ext-dd-drag-proxy .x-cal-FF9900,
+.x-cal-FF9900-ad,
+.x-cal-FF9900-ad .ext-cal-evm,
+.x-cal-FF9900 .ext-cal-picker-icon,
+.x-cal-FF9900-x dl,
+.x-calendar-palette em .x-cal-FF9900 {
+    background: #FF9900;
+}
+
+/* ===== x-cal-99CC00 ===== */
+.x-cal-99CC00,
+.x-cal-99CC00-x .ext-cal-evb,
+.ext-ie .x-cal-99CC00-ad,
+.ext-opera .x-cal-99CC00-ad {
+    color: #99CC00;
+}
+.ext-cal-day-col .x-cal-99CC00,
+.ext-dd-drag-proxy .x-cal-99CC00,
+.x-cal-99CC00-ad,
+.x-cal-99CC00-ad .ext-cal-evm,
+.x-cal-99CC00 .ext-cal-picker-icon,
+.x-cal-99CC00-x dl,
+.x-calendar-palette em .x-cal-99CC00 {
+    background: #99CC00;
+}
+
+/* ===== x-cal-339966 ===== */
+.x-cal-339966,
+.x-cal-339966-x .ext-cal-evb,
+.ext-ie .x-cal-339966-ad,
+.ext-opera .x-cal-339966-ad {
+    color: #339966;
+}
+.ext-cal-day-col .x-cal-339966,
+.ext-dd-drag-proxy .x-cal-339966,
+.x-cal-339966-ad,
+.x-cal-339966-ad .ext-cal-evm,
+.x-cal-339966 .ext-cal-picker-icon,
+.x-cal-339966-x dl,
+.x-calendar-palette em .x-cal-339966 {
+    background: #339966;
+}
+
+/* ===== x-cal-33CCCC ===== */
+.x-cal-33CCCC,
+.x-cal-33CCCC-x .ext-cal-evb,
+.ext-ie .x-cal-33CCCC-ad,
+.ext-opera .x-cal-33CCCC-ad {
+    color: #33CCCC;
+}
+.ext-cal-day-col .x-cal-33CCCC,
+.ext-dd-drag-proxy .x-cal-33CCCC,
+.x-cal-33CCCC-ad,
+.x-cal-33CCCC-ad .ext-cal-evm,
+.x-cal-33CCCC .ext-cal-picker-icon,
+.x-cal-33CCCC-x dl,
+.x-calendar-palette em .x-cal-33CCCC {
+    background: #33CCCC;
+}
+
+/* ===== x-cal-3366FF ===== */
+.x-cal-3366FF,
+.x-cal-3366FF-x .ext-cal-evb,
+.ext-ie .x-cal-3366FF-ad,
+.ext-opera .x-cal-3366FF-ad {
+    color: #3366FF;
+}
+.ext-cal-day-col .x-cal-3366FF,
+.ext-dd-drag-proxy .x-cal-3366FF,
+.x-cal-3366FF-ad,
+.x-cal-3366FF-ad .ext-cal-evm,
+.x-cal-3366FF .ext-cal-picker-icon,
+.x-cal-3366FF-x dl,
+.x-calendar-palette em .x-cal-3366FF {
+    background: #3366FF;
+}
+
+/* ===== x-cal-800080 ===== */
+.x-cal-800080,
+.x-cal-800080-x .ext-cal-evb,
+.ext-ie .x-cal-800080-ad,
+.ext-opera .x-cal-800080-ad {
+    color: #800080;
+}
+.ext-cal-day-col .x-cal-800080,
+.ext-dd-drag-proxy .x-cal-800080,
+.x-cal-800080-ad,
+.x-cal-800080-ad .ext-cal-evm,
+.x-cal-800080 .ext-cal-picker-icon,
+.x-cal-800080-x dl,
+.x-calendar-palette em .x-cal-800080 {
+    background: #800080;
+}
+
+/* ===== x-cal-969696 ===== */
+.x-cal-969696,
+.x-cal-969696-x .ext-cal-evb,
+.ext-ie .x-cal-969696-ad,
+.ext-opera .x-cal-969696-ad {
+    color: #969696;
+}
+.ext-cal-day-col .x-cal-969696,
+.ext-dd-drag-proxy .x-cal-969696,
+.x-cal-969696-ad,
+.x-cal-969696-ad .ext-cal-evm,
+.x-cal-969696 .ext-cal-picker-icon,
+.x-cal-969696-x dl,
+.x-calendar-palette em .x-cal-969696 {
+    background: #969696;
+}
+
+/* ===== x-cal-FF00FF ===== */
+.x-cal-FF00FF,
+.x-cal-FF00FF-x .ext-cal-evb,
+.ext-ie .x-cal-FF00FF-ad,
+.ext-opera .x-cal-FF00FF-ad {
+    color: #FF00FF;
+}
+.ext-cal-day-col .x-cal-FF00FF,
+.ext-dd-drag-proxy .x-cal-FF00FF,
+.x-cal-FF00FF-ad,
+.x-cal-FF00FF-ad .ext-cal-evm,
+.x-cal-FF00FF .ext-cal-picker-icon,
+.x-cal-FF00FF-x dl,
+.x-calendar-palette em .x-cal-FF00FF {
+    background: #FF00FF;
+}
+
+/* ===== x-cal-FFCC00 ===== */
+.x-cal-FFCC00,
+.x-cal-FFCC00-x .ext-cal-evb,
+.ext-ie .x-cal-FFCC00-ad,
+.ext-opera .x-cal-FFCC00-ad {
+    color: #FFCC00;
+}
+.ext-cal-day-col .x-cal-FFCC00,
+.ext-dd-drag-proxy .x-cal-FFCC00,
+.x-cal-FFCC00-ad,
+.x-cal-FFCC00-ad .ext-cal-evm,
+.x-cal-FFCC00 .ext-cal-picker-icon,
+.x-cal-FFCC00-x dl,
+.x-calendar-palette em .x-cal-FFCC00 {
+    background: #FFCC00;
+}
+
+/* ===== x-cal-FFFF00 ===== */
+.x-cal-FFFF00,
+.x-cal-FFFF00-x .ext-cal-evb,
+.ext-ie .x-cal-FFFF00-ad,
+.ext-opera .x-cal-FFFF00-ad {
+    color: #FFFF00;
+}
+.ext-cal-day-col .x-cal-FFFF00,
+.ext-dd-drag-proxy .x-cal-FFFF00,
+.x-cal-FFFF00-ad,
+.x-cal-FFFF00-ad .ext-cal-evm,
+.x-cal-FFFF00 .ext-cal-picker-icon,
+.x-cal-FFFF00-x dl,
+.x-calendar-palette em .x-cal-FFFF00 {
+    background: #FFFF00;
+}
+
+/* ===== x-cal-00FF00 ===== */
+.x-cal-00FF00,
+.x-cal-00FF00-x .ext-cal-evb,
+.ext-ie .x-cal-00FF00-ad,
+.ext-opera .x-cal-00FF00-ad {
+    color: #00FF00;
+}
+.ext-cal-day-col .x-cal-00FF00,
+.ext-dd-drag-proxy .x-cal-00FF00,
+.x-cal-00FF00-ad,
+.x-cal-00FF00-ad .ext-cal-evm,
+.x-cal-00FF00 .ext-cal-picker-icon,
+.x-cal-00FF00-x dl,
+.x-calendar-palette em .x-cal-00FF00 {
+    background: #00FF00;
+}
+
+/* ===== x-cal-00FFFF ===== */
+.x-cal-00FFFF,
+.x-cal-00FFFF-x .ext-cal-evb,
+.ext-ie .x-cal-00FFFF-ad,
+.ext-opera .x-cal-00FFFF-ad {
+    color: #00FFFF;
+}
+.ext-cal-day-col .x-cal-00FFFF,
+.ext-dd-drag-proxy .x-cal-00FFFF,
+.x-cal-00FFFF-ad,
+.x-cal-00FFFF-ad .ext-cal-evm,
+.x-cal-00FFFF .ext-cal-picker-icon,
+.x-cal-00FFFF-x dl,
+.x-calendar-palette em .x-cal-00FFFF {
+    background: #00FFFF;
+}
+
+/* ===== x-cal-00CCFF ===== */
+.x-cal-00CCFF,
+.x-cal-00CCFF-x .ext-cal-evb,
+.ext-ie .x-cal-00CCFF-ad,
+.ext-opera .x-cal-00CCFF-ad {
+    color: #00CCFF;
+}
+.ext-cal-day-col .x-cal-00CCFF,
+.ext-dd-drag-proxy .x-cal-00CCFF,
+.x-cal-00CCFF-ad,
+.x-cal-00CCFF-ad .ext-cal-evm,
+.x-cal-00CCFF .ext-cal-picker-icon,
+.x-cal-00CCFF-x dl,
+.x-calendar-palette em .x-cal-00CCFF {
+    background: #00CCFF;
+}
+
+/* ===== x-cal-993366 ===== */
+.x-cal-993366,
+.x-cal-993366-x .ext-cal-evb,
+.ext-ie .x-cal-993366-ad,
+.ext-opera .x-cal-993366-ad {
+    color: #993366;
+}
+.ext-cal-day-col .x-cal-993366,
+.ext-dd-drag-proxy .x-cal-993366,
+.x-cal-993366-ad,
+.x-cal-993366-ad .ext-cal-evm,
+.x-cal-993366 .ext-cal-picker-icon,
+.x-cal-993366-x dl,
+.x-calendar-palette em .x-cal-993366 {
+    background: #993366;
+}
+
+/* ===== x-cal-C0C0C0 ===== */
+.x-cal-C0C0C0,
+.x-cal-C0C0C0-x .ext-cal-evb,
+.ext-ie .x-cal-C0C0C0-ad,
+.ext-opera .x-cal-C0C0C0-ad {
+    color: #C0C0C0;
+}
+.ext-cal-day-col .x-cal-C0C0C0,
+.ext-dd-drag-proxy .x-cal-C0C0C0,
+.x-cal-C0C0C0-ad,
+.x-cal-C0C0C0-ad .ext-cal-evm,
+.x-cal-C0C0C0 .ext-cal-picker-icon,
+.x-cal-C0C0C0-x dl,
+.x-calendar-palette em .x-cal-C0C0C0 {
+    background: #C0C0C0;
+}
+
+/* ===== x-cal-FF99CC ===== */
+.x-cal-FF99CC,
+.x-cal-FF99CC-x .ext-cal-evb,
+.ext-ie .x-cal-FF99CC-ad,
+.ext-opera .x-cal-FF99CC-ad {
+    color: #FF99CC;
+}
+.ext-cal-day-col .x-cal-FF99CC,
+.ext-dd-drag-proxy .x-cal-FF99CC,
+.x-cal-FF99CC-ad,
+.x-cal-FF99CC-ad .ext-cal-evm,
+.x-cal-FF99CC .ext-cal-picker-icon,
+.x-cal-FF99CC-x dl,
+.x-calendar-palette em .x-cal-FF99CC {
+    background: #FF99CC;
+}
+
+/* ===== x-cal-FFCC99 ===== */
+.x-cal-FFCC99,
+.x-cal-FFCC99-x .ext-cal-evb,
+.ext-ie .x-cal-FFCC99-ad,
+.ext-opera .x-cal-FFCC99-ad {
+    color: #FFCC99;
+}
+.ext-cal-day-col .x-cal-FFCC99,
+.ext-dd-drag-proxy .x-cal-FFCC99,
+.x-cal-FFCC99-ad,
+.x-cal-FFCC99-ad .ext-cal-evm,
+.x-cal-FFCC99 .ext-cal-picker-icon,
+.x-cal-FFCC99-x dl,
+.x-calendar-palette em .x-cal-FFCC99 {
+    background: #FFCC99;
+}
+
+/* ===== x-cal-FFFF99 ===== */
+.x-cal-FFFF99,
+.x-cal-FFFF99-x .ext-cal-evb,
+.ext-ie .x-cal-FFFF99-ad,
+.ext-opera .x-cal-FFFF99-ad {
+    color: #FFFF99;
+}
+.ext-cal-day-col .x-cal-FFFF99,
+.ext-dd-drag-proxy .x-cal-FFFF99,
+.x-cal-FFFF99-ad,
+.x-cal-FFFF99-ad .ext-cal-evm,
+.x-cal-FFFF99 .ext-cal-picker-icon,
+.x-cal-FFFF99-x dl,
+.x-calendar-palette em .x-cal-FFFF99 {
+    background: #FFFF99;
+}
+
+/* ===== x-cal-CCFFCC ===== */
+.x-cal-CCFFCC,
+.x-cal-CCFFCC-x .ext-cal-evb,
+.ext-ie .x-cal-CCFFCC-ad,
+.ext-opera .x-cal-CCFFCC-ad {
+    color: #CCFFCC;
+}
+.ext-cal-day-col .x-cal-CCFFCC,
+.ext-dd-drag-proxy .x-cal-CCFFCC,
+.x-cal-CCFFCC-ad,
+.x-cal-CCFFCC-ad .ext-cal-evm,
+.x-cal-CCFFCC .ext-cal-picker-icon,
+.x-cal-CCFFCC-x dl,
+.x-calendar-palette em .x-cal-CCFFCC {
+    background: #CCFFCC;
+}
+
+/* ===== x-cal-CCFFFF ===== */
+.x-cal-CCFFFF,
+.x-cal-CCFFFF-x .ext-cal-evb,
+.ext-ie .x-cal-CCFFFF-ad,
+.ext-opera .x-cal-CCFFFF-ad {
+    color: #CCFFFF;
+}
+.ext-cal-day-col .x-cal-CCFFFF,
+.ext-dd-drag-proxy .x-cal-CCFFFF,
+.x-cal-CCFFFF-ad,
+.x-cal-CCFFFF-ad .ext-cal-evm,
+.x-cal-CCFFFF .ext-cal-picker-icon,
+.x-cal-CCFFFF-x dl,
+.x-calendar-palette em .x-cal-CCFFFF {
+    background: #CCFFFF;
+}
+
+/* ===== x-cal-99CCFF ===== */
+.x-cal-99CCFF,
+.x-cal-99CCFF-x .ext-cal-evb,
+.ext-ie .x-cal-99CCFF-ad,
+.ext-opera .x-cal-99CCFF-ad {
+    color: #99CCFF;
+}
+.ext-cal-day-col .x-cal-99CCFF,
+.ext-dd-drag-proxy .x-cal-99CCFF,
+.x-cal-99CCFF-ad,
+.x-cal-99CCFF-ad .ext-cal-evm,
+.x-cal-99CCFF .ext-cal-picker-icon,
+.x-cal-99CCFF-x dl,
+.x-calendar-palette em .x-cal-99CCFF {
+    background: #99CCFF;
+}
+
+/* ===== x-cal-CC99FF ===== */
+.x-cal-CC99FF,
+.x-cal-CC99FF-x .ext-cal-evb,
+.ext-ie .x-cal-CC99FF-ad,
+.ext-opera .x-cal-CC99FF-ad {
+    color: #CC99FF;
+}
+.ext-cal-day-col .x-cal-CC99FF,
+.ext-dd-drag-proxy .x-cal-CC99FF,
+.x-cal-CC99FF-ad,
+.x-cal-CC99FF-ad .ext-cal-evm,
+.x-cal-CC99FF .ext-cal-picker-icon,
+.x-cal-CC99FF-x dl,
+.x-calendar-palette em .x-cal-CC99FF {
+    background: #CC99FF;
+}
+
+/* ===== x-cal-FFFFFF ===== */
+.x-cal-FFFFFF,
+.x-cal-FFFFFF-x .ext-cal-evb,
+.ext-ie .x-cal-FFFFFF-ad,
+.ext-opera .x-cal-FFFFFF-ad {
+    color: #FFFFFF;
+}
+.ext-cal-day-col .x-cal-FFFFFF,
+.ext-dd-drag-proxy .x-cal-FFFFFF,
+.x-cal-FFFFFF-ad,
+.x-cal-FFFFFF-ad .ext-cal-evm,
+.x-cal-FFFFFF .ext-cal-picker-icon,
+.x-cal-FFFFFF-x dl,
+.x-calendar-palette em .x-cal-FFFFFF {
+    background: #FFFFFF;
+}
+/*******************************************
+ * Extensible recurrence control styles
+ *
+ ******************************************/
+.extensible-recur-ct .x-table-layout-ct {
+    margin-top: 5px;
+}
+.extensible-recur-ct .x-table-layout-cell {
+    padding-right: 5px;
+    font-size: 12px;
+}
+.extensible-recur-ct .x-form-check-wrap {
+    white-space: nowrap;
+    margin-right: 10px;
+}
+.extensible-recur-ct .x-form-check-group .x-column {
+    xmargin-right: 5px;
+}
+.extensible-recur-inner-ct {
+    padding-left: 10px;
+    border-left: 2px solid #ddd;
+}
+.x-panel-mc .extensible-recur-inner-ct {
+    /* inside a framed panel with a blue bg */
+    border-left: 2px solid #A7C5DF;
+}

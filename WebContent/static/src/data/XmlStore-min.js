@@ -1,0 +1,1 @@
+Ext.data.XmlStore=Ext.extend(Ext.data.Store,{constructor:function(a){Ext.data.XmlStore.superclass.constructor.call(this,Ext.apply(a,{reader:new Ext.data.XmlReader(a)}))}});Ext.reg("xmlstore",Ext.data.XmlStore);

@@ -1,0 +1,1 @@
+Ext.direct.Provider=Ext.extend(Ext.util.Observable,{priority:1,constructor:function(a){Ext.apply(this,a);this.addEvents("connect","disconnect","data","exception");Ext.direct.Provider.superclass.constructor.call(this,a)},isConnected:function(){return false},connect:Ext.emptyFn,disconnect:Ext.emptyFn});
