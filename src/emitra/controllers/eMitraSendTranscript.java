@@ -1,4 +1,4 @@
-package ebhamashah.controllers;
+package emitra.controllers;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ebhamashah.util.GsonUtil;
-import ebhamashah.util.MailUtil;
+import emitra.util.GsonUtil;
+import emitra.util.MailUtil;
 
 @WebServlet(urlPatterns = { "/eMitraSendTranscript" })
 public class eMitraSendTranscript extends HttpServlet {

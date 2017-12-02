@@ -1,4 +1,4 @@
-package ebhamashah.controllers;
+package emitra.controllers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ import org.apache.commons.lang3.StringUtils;
 import ai.api.AIServiceException;
 import ai.api.model.AIResponse;
 import ai.api.web.AIServiceServlet;
-import ebhamashah.util.ApplicationLogger;
-import ebhamashah.util.GsonUtil;
+import emitra.util.ApplicationLogger;
+import emitra.util.GsonUtil;
 
 @WebServlet(urlPatterns = { "/eMitraAgent" }, initParams = {
 		@WebInitParam(name = eMitraAgentServlet.PARAM_API_AI_KEY, value = "8bf72a1f9d154bdf84ff12c85d35bcf5") })

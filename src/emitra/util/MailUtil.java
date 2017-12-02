@@ -1,4 +1,4 @@
-package ebhamashah.util;
+package emitra.util;
 
 import java.util.Properties;
 import java.util.Random;

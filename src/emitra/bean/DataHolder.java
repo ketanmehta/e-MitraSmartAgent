@@ -1,4 +1,4 @@
-package ebhamashah.bean;
+package emitra.bean;
 
 import java.io.Serializable;
 

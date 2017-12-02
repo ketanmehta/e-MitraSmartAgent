@@ -1,4 +1,4 @@
-package ebhamashah.util;
+package emitra.util;
 
 public enum Module {
 	

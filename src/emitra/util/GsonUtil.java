@@ -1,4 +1,4 @@
-package ebhamashah.util;
+package emitra.util;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 
-import ebhamashah.bean.DataHolder;
+import emitra.bean.DataHolder;
 
 public class GsonUtil {
 	private static Gson _INSTANCE = null;
