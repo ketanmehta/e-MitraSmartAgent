@@ -1,7 +1,0 @@
-/*!
- * Extensible 1.0.2
- * Copyright(c) 2010-2012 Extensible, LLC
- * licensing@ext.ensible.com
- * http://ext.ensible.com
- */
-Ext.ensible.cal.MonthViewTemplate=function(a){Ext.apply(this,a);this.weekTpl=new Ext.ensible.cal.BoxLayoutTemplate(a);this.weekTpl.compile();var b=this.showWeekLinks?'<div class="ext-cal-week-link-hd">&#160;</div>':"";Ext.ensible.cal.MonthViewTemplate.superclass.constructor.call(this,'<div class="ext-cal-inner-ct {extraClasses}">','<div class="ext-cal-hd-ct ext-cal-month-hd">',b,'<table class="ext-cal-hd-days-tbl" cellpadding="0" cellspacing="0">',"<tbody>","<tr>",'<tpl for="days">','<th class="ext-cal-hd-day{[xindex==1 ? " ext-cal-day-first" : ""]}" title="{title}">{name}</th>',"</tpl>","</tr>","</tbody>","</table>","</div>",'<div class="ext-cal-body-ct">{weeks}</div>',"</div>")};Ext.extend(Ext.ensible.cal.MonthViewTemplate,Ext.XTemplate,{dayHeaderFormat:"D",dayHeaderTitleFormat:"l, F j, Y",applyTemplate:function(g){var h=[],e=this.weekTpl.apply(g),c=g.viewStart;for(var b=0;b<7;b++){var f=c.add(Date.DAY,b);h.push({name:f.format(this.dayHeaderFormat),title:f.format(this.dayHeaderTitleFormat)})}var a=this.showHeader===true?"":"ext-cal-noheader";if(this.showWeekLinks){a+=" ext-cal-week-links"}return Ext.ensible.cal.MonthViewTemplate.superclass.applyTemplate.call(this,{days:h,weeks:e,extraClasses:a})}});Ext.ensible.cal.MonthViewTemplate.prototype.apply=Ext.ensible.cal.MonthViewTemplate.prototype.applyTemplate;

@@ -1,1 +1,0 @@
-Ext.data.JsonStore=Ext.extend(Ext.data.Store,{constructor:function(a){Ext.data.JsonStore.superclass.constructor.call(this,Ext.apply(a,{reader:new Ext.data.JsonReader(a)}))}});Ext.reg("jsonstore",Ext.data.JsonStore);

@@ -1,1 +1,0 @@
-Ext.handleError=function(a){throw a};Ext.Error=function(a){this.message=(this.lang[a])?this.lang[a]:a};Ext.Error.prototype=new Error();Ext.apply(Ext.Error.prototype,{lang:{},name:"Ext.Error",getName:function(){return this.name},getMessage:function(){return this.message},toJson:function(){return Ext.encode(this)}});

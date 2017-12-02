@@ -1,1 +1,0 @@
-Ext.Element.addMethods({select:function(a,b){return Ext.Element.select(a,b,this.dom)}});

@@ -1,1 +1,0 @@
-Ext.grid.RowNumberer=Ext.extend(Object,{header:"",width:23,sortable:false,constructor:function(a){Ext.apply(this,a);if(this.rowspan){this.renderer=this.renderer.createDelegate(this)}},fixed:true,hideable:false,menuDisabled:true,dataIndex:"",id:"numberer",rowspan:undefined,renderer:function(b,c,a,d){if(this.rowspan){c.cellAttr='rowspan="'+this.rowspan+'"'}return d+1}});

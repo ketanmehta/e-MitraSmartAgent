@@ -1,7 +1,0 @@
-/*!
- * Extensible 1.0.2
- * Copyright(c) 2010-2012 Extensible, LLC
- * licensing@ext.ensible.com
- * http://ext.ensible.com
- */
-Ext.ensible.cal.EventContextMenu=Ext.extend(Ext.menu.Menu,{hideOnClick:true,ignoreParentClicks:true,editDetailsText:"Edit Details",deleteText:"Delete",moveToText:"Move to...",enableScrolling:false,initComponent:function(){this.addEvents("editdetails","eventdelete","eventmove");this.buildMenu();Ext.ensible.cal.CalendarListMenu.superclass.initComponent.call(this)},buildMenu:function(){if(this.rendered){return}this.dateMenu=new Ext.menu.DateMenu({scope:this,handler:function(b,a){a=Ext.ensible.Date.copyTime(this.rec.data[Ext.ensible.cal.EventMappings.StartDate.name],a);this.fireEvent("eventmove",this,this.rec,a)}});Ext.apply(this,{items:[{text:this.editDetailsText,iconCls:"extensible-cal-icon-evt-edit",scope:this,handler:function(){this.fireEvent("editdetails",this,this.rec,this.ctxEl)}},{text:this.deleteText,iconCls:"extensible-cal-icon-evt-del",scope:this,handler:function(){this.fireEvent("eventdelete",this,this.rec,this.ctxEl)}},"-",{text:this.moveToText,iconCls:"extensible-cal-icon-evt-move",menu:this.dateMenu}]})},showForEvent:function(c,a,b){this.rec=c;this.ctxEl=a;this.dateMenu.picker.setValue(c.data[Ext.ensible.cal.EventMappings.StartDate.name]);this.showAt(b)},onHide:function(){Ext.ensible.cal.CalendarListMenu.superclass.onHide.call(this);delete this.ctxEl}});Ext.reg("extensible.eventcontextmenu",Ext.ensible.cal.EventContextMenu);

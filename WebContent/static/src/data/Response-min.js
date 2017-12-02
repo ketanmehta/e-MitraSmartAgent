@@ -1,1 +1,0 @@
-Ext.data.Response=function(a){Ext.apply(this,a)};Ext.data.Response.prototype={action:undefined,success:undefined,message:undefined,data:undefined,raw:undefined,records:undefined};
