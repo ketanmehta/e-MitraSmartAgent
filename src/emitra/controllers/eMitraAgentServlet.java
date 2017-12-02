@@ -21,7 +21,7 @@ import emitra.util.ApplicationLogger;
 import emitra.util.GsonUtil;
 
 @WebServlet(urlPatterns = { "/eMitraAgent" }, initParams = {
-		@WebInitParam(name = eMitraAgentServlet.PARAM_API_AI_KEY, value = "8bf72a1f9d154bdf84ff12c85d35bcf5") })
+		@WebInitParam(name = eMitraAgentServlet.PARAM_API_AI_KEY, value = "0474e882c17c4274b2760aec426f0558") })
 public class eMitraAgentServlet extends AIServiceServlet {
 	private static final long serialVersionUID = 1L;
 	private static final ApplicationLogger logger = ApplicationLogger.getLogger(GsonUtil.class);
