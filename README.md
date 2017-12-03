@@ -71,5 +71,6 @@ Application Status
 Live Link(s) : 
 
 Facebook Messanger : https://www.facebook.com/emitrasmartagent/
+Embedable Link : https://bot.dialogflow.com/eMitraSmartAgent
 
 		
