@@ -27,7 +27,7 @@ Solution :
   
 - Minimal inputs from User, Fast Response, User Friendly application.
 
-- Easily integrable to Facebook Messanger Bot, Telegram Bot, Google Assistant, Amazon Echo Dot, Slack etc.
+- Easily integrable to Facebook Messanger Bot, Telegram Bot, Google Assistant, Slack etc.
 
 e-Mitra Smart Agent allows you to avail the services provided by Govertment of Rajasthan
 - No matter what the time is.
